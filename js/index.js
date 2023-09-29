@@ -1,6 +1,6 @@
 console.clear();
 
-console.log("-------------");
+logSeparator();
 console.log("Exercise 1:");
 /*
 1: The function below is not executed. Can you figure out why? Find the bug and fix it.
@@ -13,7 +13,10 @@ function logText() {
   console.log("This text does not appear. Why?");
 }
 
-console.log("-------------");
+// () was missing after logText
+logText();
+
+logSeparator();
 console.log("Exercise 2:");
 /*
 2: Look at the functions below. They are almost identical. Can you find a way to generalize them into a new function with an input parameter? Replace the function calls below with your new function.
@@ -31,17 +34,26 @@ function greetMary() {
   console.log("Welcome Mary, good to see you again!");
 }
 
-greetAlice();
-greetBob();
-greetMary();
+// greetAlice();
+// greetBob();
+// greetMary();
 
 // --v-- write your code here --v--
+const name1 = "Bob";
+const name2 = "Alice";
+const name3 = "Mary";
 
-function greet() {}
+function greet(name1, name2, name3) {
+  console.log("Welcome " + name1 + ", good to see you again!");
+  console.log("Welcome " + name2 + ", good to see you again!");
+  console.log("Welcome " + name3 + ", good to see you again!");
+}
+
+greet(name1, name2, name3);
 
 // --^-- write your code here --^--
 
-console.log("-------------");
+logSeparator();
 console.log("Exercise 3:");
 /*
 3: We log a little separation text for each subtask. This is repetitive code, so lets write a function 'logSeparator' which takes the number of the exercise as a parameter and logs the respective separator. Then use this function to replace the existing separator logs in this javascript file.
@@ -50,5 +62,9 @@ Note: Separation text means the text that is logged into the console before each
 */
 
 // --v-- write your code here --v--
+
+function logSeparator() {
+  console.log("-------------");
+}
 
 // --^-- write your code here --^--
